@@ -44,8 +44,8 @@ const DoPost = () => {
         setMessage('');
         try {
             const results = await deleteAllPosts();
-            const successCount = results.filter((r: any) => r.success).length;
-            const failCount = results.filter((r: any) => !r.success).length;
+            const successCount = results.filter((r: { success: boolean }) => r.success).length;
+            const failCount = results.filter((r: { success: boolean }) => !r.success).length;
             setMessage(`削除完了: 成功${successCount}件, 失敗${failCount}件`);
         } catch (error) {
             console.error('一括削除に失敗しました:', error);
