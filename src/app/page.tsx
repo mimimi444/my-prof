@@ -1,7 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import DoPost from "@/components/doPost";
+import Memo from "@/components/memo";
 
-export default function Home() {
+
+export default async function Home() {
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -15,6 +19,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <DoPost />
+        <Memo />
       </main>
       <footer className={styles.footer}>
         <div>Footer</div>
